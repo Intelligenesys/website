@@ -1,18 +1,32 @@
-/* Background image setup */
-.background-with-overlay {
+body,
+html {
   margin: 0;
+  height: 100%;
+  overflow: hidden;
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: url('images/wix-image.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #ffffff;
+}
+
+/* Background image with 50% opacity */
+.background-with-overlay {
+  position: relative;
+  background: url('images/wix-image.png') center center / cover no-repeat fixed;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden; /* no scrollbars */
+  color: white;
+}
+
+/* Dark overlay rectangle above background image */
+.background-fade {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+  z-index: 0;
 }
 
 /* Header */
 header.dark-header {
+  position: relative;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.85);
   padding: 1rem 2rem;
   display: flex;
@@ -33,9 +47,9 @@ header.dark-header {
 .brand-name {
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
 }
 
-/* Navigation */
 nav a {
   color: #ffffff;
   margin-left: 1.5rem;
@@ -48,16 +62,17 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Content */
+/* Content box with 50% dark background */
 .overlay-content {
-  background-color: rgba(0, 0, 0, 0.75);
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% darker box */
   padding: 2rem;
   max-width: 860px;
   margin: 2rem auto;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   overflow: auto;
-  flex: 1;
 }
 
 h1 {
@@ -77,16 +92,20 @@ h1 {
 
 /* Footer */
 footer {
+  position: relative;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.85);
   text-align: center;
   padding: 0.75rem;
   font-size: 0.9rem;
   color: #cccccc;
 }
+
 footer a {
   color: #ffffff;
   text-decoration: none;
 }
+
 footer a:hover {
   text-decoration: underline;
 }
