@@ -1,18 +1,23 @@
-body {
+/* Background image setup */
+.background-with-overlay {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background-color: #0d0d0d; /* deep black */
-  color: #e6e6e6; /* near white for readability */
-  line-height: 1.7;
+  background: url('images/wix-image.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* no scrollbars */
 }
 
+/* Header */
 header.dark-header {
-  background-color: #1a1a1a;
+  background-color: rgba(0, 0, 0, 0.85);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #333;
 }
 
 .brand {
@@ -26,72 +31,62 @@ header.dark-header {
 }
 
 .brand-name {
-  color: #ffffff;
   font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
+/* Navigation */
 nav a {
-  color: #cccccc;
+  color: #ffffff;
   margin-left: 1.5rem;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
 }
 
 nav a.active,
 nav a:hover {
   text-decoration: underline;
-  color: #ffffff;
 }
 
-.content {
-  max-width: 880px;
-  margin: 3rem auto;
+/* Content */
+.overlay-content {
+  background-color: rgba(0, 0, 0, 0.75);
   padding: 2rem;
-  background-color: #1c1c1c; /* dark gray for content contrast */
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  max-width: 860px;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  overflow: auto;
+  flex: 1;
 }
 
 h1 {
-  font-size: 2.2rem;
-  color: #ffffff;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #444;
-  padding-bottom: 0.5rem;
+  color: #ffffff;
+  text-align: center;
 }
 
 .intro {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-style: italic;
-  color: #dddddd;
   margin-bottom: 1.5rem;
-}
-
-footer {
-  background-color: #1a1a1a;
-  color: #aaaaaa;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
+  color: #dddddd;
 }
 
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
 footer a {
   color: #ffffff;
   text-decoration: none;
 }
-
 footer a:hover {
   text-decoration: underline;
-}
-
-.wix-image {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
