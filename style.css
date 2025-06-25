@@ -136,8 +136,69 @@ footer a:hover {
   h1 {
     font-size: 1.6rem;
   }
-
   .intro {
     font-size: 1rem;
   }
 }
+
+/* CSS for What we do : Start */
+
+/* Services Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.service-card:hover {
+  transform: scale(1.03);
+  background-color: rgba(0, 188, 212, 0.2);
+}
+
+.service-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  filter: brightness(0.95);
+}
+
+.service-card span {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+/* Make tooltips visible for accessibility */
+.service-card[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: normal;
+  max-width: 220px;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+/* CSS for What we do : End */
