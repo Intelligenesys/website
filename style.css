@@ -212,3 +212,30 @@ nav a:hover {
 .contact-form button:hover {
   background-color: #0097a7;
 }
+
+/* ===== PREVENT SCROLL ON INDEX PAGE ONLY ===== */
+.no-scroll {
+  min-height: calc(100vh - 80px); /* minus header + footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ===== HOME FOOTER (only on index) ===== */
+.home-footer {
+  background-color: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+.home-footer a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.home-footer a:hover {
+  text-decoration: underline;
+}
