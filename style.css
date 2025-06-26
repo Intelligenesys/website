@@ -93,9 +93,9 @@ nav a:hover {
 /* ===== SERVICE GRID ===== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  align-items: stretch;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2rem;
+  justify-items: center;
 }
 
 .service-card {
@@ -156,5 +156,11 @@ nav a:hover {
 
   .service-description {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
   }
 }
