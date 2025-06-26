@@ -1,4 +1,4 @@
-/* ====== GLOBAL STYLES ====== */
+/* ===== GLOBAL ===== */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ====== BACKGROUND IMAGE & OVERLAY ====== */
+/* ===== BACKGROUND IMAGE & OVERLAY ===== */
 .background-with-overlay {
   background: url('images/wix-image.png') center center / cover no-repeat fixed;
   position: relative;
@@ -20,7 +20,8 @@ html, body {
 
 .background-fade {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.75);
@@ -28,7 +29,7 @@ html, body {
   backdrop-filter: blur(2px);
 }
 
-/* ====== HEADER ====== */
+/* ===== HEADER ===== */
 header.dark-header {
   position: relative;
   z-index: 1;
@@ -74,7 +75,7 @@ nav a:hover {
   color: #00bcd4;
 }
 
-/* ====== MAIN CONTAINER ====== */
+/* ===== MAIN CONTAINER ===== */
 .overlay-content {
   z-index: 1;
   padding: 2rem 1rem;
@@ -85,124 +86,57 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-.overlay-content h1 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.intro {
-  text-align: center;
-  font-style: italic;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: #dddddd;
-}
-
-/* ====== SERVICE CARDS (for "What We Do") ====== */
+/* ===== SERVICE GRID ===== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
-  margin-top: 1rem;
 }
 
 .service-card {
-  position: relative;
-  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  height: 240px;
+  overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card:hover {
   transform: scale(1.03);
-  z-index: 10;
 }
 
 .service-card img {
   width: 100%;
-  height: 100%;
+  height: 180px;
   object-fit: cover;
   display: block;
-  transition: opacity 0.4s ease;
 }
 
-.card-popup {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.service-label {
   text-align: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  transition: bottom 0.4s ease;
-}
-
-.service-card:hover .card-popup {
-  bottom: 0;
-}
-
-.card-popup h3 {
+  padding: 1rem 0.5rem 0.5rem;
+  background: #1a1a1a;
   color: #00bcd4;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-weight: bold;
+  font-size: 1.05rem;
 }
 
-.card-popup p {
+.service-description {
+  text-align: center;
+  padding: 0.5rem 1rem 1rem;
+  color: #dddddd;
   font-size: 0.95rem;
-  color: #e0e0e0;
-  line-height: 1.4;
+  flex-grow: 1;
 }
 
-/* ====== FOOTER ====== */
-footer {
-  position: relative;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.85);
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #cccccc;
-}
-
-footer a {
-  color: #00bcd4;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ====== RESPONSIVE ====== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .brand-name {
     font-size: 1.2rem;
-  }
-
-  .overlay-content h1 {
-    font-size: 1.6rem;
-  }
-
-  .intro {
-    font-size: 1rem;
-  }
-
-  .card-overlay h3 {
-    font-size: 1.1rem;
-  }
-
-  .card-overlay p {
-    font-size: 0.9rem;
   }
 
   nav {
@@ -212,5 +146,13 @@ footer a:hover {
 
   .overlay-content {
     padding: 1.5rem 1rem;
+  }
+
+  .service-label {
+    font-size: 1rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
   }
 }
