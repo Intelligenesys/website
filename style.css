@@ -215,14 +215,31 @@ nav a:hover {
 
 /* ===== PREVENT SCROLL ON INDEX PAGE ONLY ===== */
 .no-scroll {
-  min-height: calc(100vh - 80px); /* minus header + footer */
+  min-height: calc(100vh - 100px); /* minus header + footer */
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
 }
 
-/* ===== HOME FOOTER (only on index) ===== */
+/* ===== TEXT HIGHLIGHTING ===== */
+.highlight-home p {
+  color: #e0e0e0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight-home .highlight {
+  color: #00bcd4;
+  font-weight: 600;
+}
+
+/* ===== HOME FOOTER ===== */
 .home-footer {
   background-color: rgba(0, 0, 0, 0.85);
   text-align: center;
