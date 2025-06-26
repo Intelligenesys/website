@@ -114,11 +114,11 @@ nav a:hover {
   height: 240px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   z-index: 10;
 }
 
@@ -126,46 +126,41 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.7);
-  transition: filter 0.3s;
+  display: block;
+  transition: opacity 0.4s ease;
 }
 
-.service-card:hover img {
-  filter: brightness(0.4);
-}
-
-.card-overlay {
+.card-popup {
   position: absolute;
-  top: 0;
+  bottom: -100%;
   left: 0;
-  height: 100%;
   width: 100%;
-  padding: 1.5rem 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  opacity: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  transition: opacity 0.4s ease-in-out;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: bottom 0.4s ease;
 }
 
-.service-card:hover .card-overlay {
-  opacity: 1;
+.service-card:hover .card-popup {
+  bottom: 0;
 }
 
-.card-overlay h3 {
-  margin-bottom: 0.5rem;
+.card-popup h3 {
   color: #00bcd4;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
-.card-overlay p {
+.card-popup p {
   font-size: 0.95rem;
-  line-height: 1.5;
   color: #e0e0e0;
-  padding: 0 0.5rem;
+  line-height: 1.4;
 }
 
 /* ====== FOOTER ====== */
