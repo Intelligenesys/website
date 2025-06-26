@@ -84,13 +84,18 @@ nav a:hover {
   flex: 1;
   width: 100%;
   box-sizing: border-box;
+  min-height: calc(100vh - 100px); /* header height estimate */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ===== SERVICE GRID ===== */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
 .service-card {
@@ -98,11 +103,11 @@ nav a:hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 280px; /* compressed */
 }
 
 .service-card:hover {
@@ -111,45 +116,42 @@ nav a:hover {
 
 .service-card img {
   width: 100%;
-  height: 180px;
+  height: 120px; /* smaller image height */
   object-fit: cover;
-  display: block;
 }
 
 .service-label {
   text-align: center;
-  padding: 1rem 0.5rem 0.5rem;
+  padding: 0.5rem 0.25rem;
   background: #1a1a1a;
   color: #00bcd4;
   font-weight: bold;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 .service-description {
   text-align: center;
-  padding: 0.5rem 1rem 1rem;
-  color: #dddddd;
-  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  color: #cccccc;
+  font-size: 0.85rem;
   flex-grow: 1;
+  overflow: hidden;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .brand-name {
-    font-size: 1.2rem;
-  }
-
-  nav {
-    justify-content: center;
-    margin-top: 1rem;
-  }
-
   .overlay-content {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
+    min-height: auto;
   }
 
-  .service-label {
-    font-size: 1rem;
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    height: auto;
   }
 
   .service-description {
